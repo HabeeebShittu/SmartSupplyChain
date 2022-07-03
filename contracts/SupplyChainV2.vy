@@ -32,7 +32,7 @@ TEMPERATURE: constant(String[100]) = "20°C"
 # Create (POST) function addProduct. 
 # Inputs: UID from RFID Tag
 # Log: object of six mixed variables: uId, stage, humidity, temperature, createdAt, & updatedAt
-# Internal calls: timestamp to record the time of update
+# Internal calls: timestamp to record the time of creation
 @internal #is made internal to be hidden and accessible only by the contract
 def addProduct(_uId: uint256):
   newProduct: Product = Product({
@@ -91,7 +91,7 @@ def writeProduct(_uId: uint256) -> bool:
 
 # Read (GET) function readProduct. 
 # Inputs: UID from RFID Tag
-# Output: object of seven mixed variables: uId, stage, humidity, temperature, createdAt, updatedAt, & exists
+# Output: object of six mixed variables: uId, stage, humidity, temperature, createdAt, & updatedAt
 @external #is made external to be visible / editible
 @view
 def readProduct(_uId: uint256) -> (uint256, uint256, String[100], String[100], uint256, uint256):
