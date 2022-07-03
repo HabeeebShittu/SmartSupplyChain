@@ -1,0 +1,13 @@
+__pycache__
+.pytest_cache
+.env
+.history
+.hypothesis/
+build/
+reports/
+
+keep/
+brownie-config.yaml
+Demo.py
+rfid_info.txt
+trans_log.txt
