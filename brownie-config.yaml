@@ -1,0 +1,15 @@
+dotenv: .env # Runs .env file to Env. Vars.
+networks:
+  default: kovan
+  kovan:
+    link_token: "0xa36085F69e2889c224210F603D836748e7dC0088"
+compiler:
+  evm_version: null
+  solc:
+    version: 0.8.7
+    optimizer:
+      enabled: true
+      runs: 200
+    remappings: null
+  vyper:
+    version: 0.3.3

@@ -6,8 +6,4 @@ __pycache__
 build/
 reports/
 
-keep/
-brownie-config.yaml
 Demo.py
-rfid_info.txt
-trans_log.txt

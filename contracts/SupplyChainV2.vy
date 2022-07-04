@@ -62,10 +62,10 @@ def addProduct(_uId: uint256):
 @internal #is made internal to be hidden and accessible only by the contract
 def updateProduct(_uId: uint256):
   assert self.products[_uId].stage < 6, "Product fully delivered"
-
+  
+  self.products[_uId].stage += 1
+  self.products[_uId].updatedAt = block.timestamp
   product: Product = self.products[_uId]
-  product.stage += 1
-  product.updatedAt = block.timestamp
 
   log ProductEvent(
     product.uId,
@@ -91,18 +91,16 @@ def writeProduct(_uId: uint256) -> bool:
 
 # Read (GET) function readProduct. 
 # Inputs: UID from RFID Tag
-# Output: object of six mixed variables: uId, stage, humidity, temperature, createdAt, & updatedAt
+# Output: object of four uint256 variables: uId, stage, createdAt, & updatedAt
 @external #is made external to be visible / editible
 @view
-def readProduct(_uId: uint256) -> (uint256, uint256, String[100], String[100], uint256, uint256):
+def readProduct(_uId: uint256) -> (uint256, uint256, uint256, uint256):
   assert self.products[_uId].exists, "Product Not Found"
   
   product: Product = self.products[_uId]
   return(
     product.uId,
     product.stage,
-    product.humidity,
-    product.temperature,
     product.createdAt,
     product.updatedAt
   )
