@@ -5,5 +5,3 @@ __pycache__
 .hypothesis/
 build/
 reports/
-
-Demo.py
