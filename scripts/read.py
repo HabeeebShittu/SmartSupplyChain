@@ -34,7 +34,7 @@ def main():
   # Return Product Information on console if found on the blockchain
   print(f"Searched Product ID is: {productArray[0]}")
   print(f"Current Product Stage is: {productArray[1]}")
-  print(f"Product Humidity is: 20%")
-  print(f"Product Temperature is: 20°C")
+  print("Product Humidity is: 20%")
+  print("Product Temperature is: 20°C")
   print(f"Product was created at: {createdAt}")
   print(f"Product Last update was at: {updatedAt}")
