@@ -37,7 +37,7 @@ Contract = w3.eth.contract(address=contractAddress, abi=contractAbi)
 try:
   # Read RFID tag
   print("Put RFID tag on sensor")
-  id = reader.read()
+  id, text = reader.read()
   
   # Print the received productID to terminal
   productID = id

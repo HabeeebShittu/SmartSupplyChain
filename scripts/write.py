@@ -1,7 +1,5 @@
-# Import accounts and Smart Contract object
-from brownie import accounts, SupplyChainV2
-# Import module that supplies classes for manipulating environment variables
-import os
+# Import config, accounts and Smart Contract object
+from brownie import config, accounts, SupplyChainV2
 
 # Begin MAIN function
 def main():
@@ -14,7 +12,8 @@ def main():
   # ============SET KEY PARAMETERS FOR THIS PYTHON SCRIPT============
   # Step 2:
   # Get PRIVATE KEY of the account to be charged Transaction Gas Fees for “writing” into Smart Contract
-  account = accounts.add(os.getenv("PRIVATE_KEY"))
+  privateKey = config["wallets"]["from_key"]
+  account = accounts.add(privateKey)
   # Step 3:
   # Create an object used to identify the latest deployment
   Contract = SupplyChainV2[len(SupplyChainV2) - 1]

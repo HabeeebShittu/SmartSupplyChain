@@ -13,3 +13,5 @@ compiler:
     remappings: null
   vyper:
     version: 0.3.3
+wallets:
+  from_key: ${PRIVATE_KEY}
